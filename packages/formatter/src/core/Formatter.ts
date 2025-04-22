@@ -216,14 +216,16 @@ export default class Formatter {
 
   // Commas start a new line (unless within inline parentheses or SQL "LIMIT" clause)
   formatComma(token: Token, query: string) {
-    query = trimSpacesEnd(query) + token.value + ' ';
+    //query = trimSpacesEnd(query) + token.value + ' ';
+    query = trimSpacesEnd(query) + '\n' + this.indentation.getIndent() + token.value + ' ';
 
     if (this.inlineBlock.isActive()) {
       return query;
     } else if (/^LIMIT$/iu.test(this.previousReservedWord.value)) {
       return query;
     } else {
-      return this.addNewline(query);
+      //return this.addNewline(query);
+      return query;
     }
   }
 

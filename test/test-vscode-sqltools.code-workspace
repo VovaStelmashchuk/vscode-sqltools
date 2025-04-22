@@ -24,7 +24,8 @@
     "sqltools.sessionFilesFolder": "/tmp",
     "sqltools.format": {
       "reservedWordCase": "upper",
-      "linesBetweenQueries": "preserve"
+      "linesBetweenQueries": 5,
+      "indent": "tttt"
     },
     // "sqltools.autoConnectTo": ["PGSQL"],
     "sqltools.flattenGroupsIfOne": false,
@@ -226,8 +227,12 @@
     "sqltools.queryParams.enableReplace": true,
     "sqltools.dependencyManager": {
       "packageManager": "yarn",
-      "installArgs": ["add"],
-      "runScriptArgs": ["run"],
+      "installArgs": [
+        "add"
+      ],
+      "runScriptArgs": [
+        "run"
+      ],
       "autoAccept": true
     },
     "sqltools.debug": {
